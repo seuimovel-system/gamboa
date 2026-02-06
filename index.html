@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamboa do Morro - BA | RE/MAX Seu Imóvel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --green: #4c6652;
+        --green-dark: #3c5041;
+        --text-main: #333;
+        --text-muted: #666;
+        --bg-light: #f8f8f8;
+        --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
+        --cyan-primary: #00acc1;
+        --cyan-dark: #008fa1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-main);
+        background: #fff;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* =========================
+        TOPO
+      ========================== */
+      .top-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(76, 102, 82, 0.95);
+        padding: 16px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 200;
+        backdrop-filter: blur(10px);
+      }
+
+      .top-bar-logo {
+        position: absolute;
+        left: 16px;
+        height: 42px;
+      }
+
+      .top-bar h2 {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-align: center;
+        padding-left: 72px;
+      }
+
+      /* =========================
+        HERO
+      ========================== */
+      .hero {
+        position: relative;
+        padding: 90px 20px 60px;
+        min-height: 90vh;
+        background-image: url("banner/558763_1_1712147078660d4a86cbffd.png");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+      }
+
+      .hero-content,
+      .hero-form {
+        position: relative;
+        z-index: 10;
+      }
+
+      .hero-content {
+        max-width: 640px;
+        text-align: center;
+      }
+
+      .hero-title {
+        color: #fff;
+        font-size: clamp(24px, 7vw, 36px);
+        font-weight: 900;
+        line-height: 1.15;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-title .title-desktop {
+        display: none;
+      }
+
+      .hero-title .title-mobile {
+        display: block;
+      }
+
+      .hero-form {
+        width: 100%;
+        max-width: 420px;
+        margin-left: auto;
+      }
+
+      .form-header-green {
+        background: rgba(60, 80, 65, 0.9);
+        padding: 18px 20px;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .form-header-green h3 {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .hero-form-body {
+        background: transparent;
+        padding: 20px;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .form-group {
+        margin-bottom: 14px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 5px;
+        border: none;
+        font-size: 15px;
+        font-family: "Montserrat", sans-serif;
+        background: #fff;
+      }
+
+      .form-group input::placeholder {
+        color: #aaa;
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background: rgba(60, 80, 65, 0.95);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 6px;
+      }
+
+      .btn-submit:hover {
+        background: var(--green-dark);
+        transform: translateY(-2px);
+      }
+
+      /* SETA QUE INDICA PARA BAIXO */
+      .hero-scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 18px;
+        transform: translateX(-50%);
+        font-size: 30px;
+        color: #fff;
+        z-index: 11;
+        cursor: pointer;
+        animation: scrollPulse 1.4s infinite;
+      }
+
+      .hero-scroll span {
+        display: inline-block;
+      }
+
+      @keyframes scrollPulse {
+        0% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(8px);
+        }
+        70% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(4px);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(12px);
+        }
+      }
+
+      /* =========================
+        SEÇÕES GENÉRICAS
+      ========================== */
+      section {
+        padding: 40px 20px;
+      }
+
+      .section-arquipelago,
+      .section-acessos,
+      .section-arquipelago-text,
+      .section-ilhas-card {
+        background: var(--bg-light);
+      }
+
+      .section-macro,
+      .section-vilarejo-text,
+      .section-cadastro {
+        background: #fff;
+      }
+
+      /* =========================
+        ARQUIPÉLAGO (texto + card abaixo)
+      ========================== */
+      .arquipelago-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .arquipelago-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .arquipelago-left-side {
+        display: flex;
+        gap: 14px;
+      }
+
+      .vertical-text {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        flex-direction: column;
+        flex-shrink: 0;
+      }
+
+      .arquipelago-side-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .vertical-text .icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        overflow: hidden;
+      }
+
+      .vertical-text .icon img {
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+      }
+
+      .vertical-text .letters {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--green);
+      }
+
+      .vertical-text .letters span {
+        line-height: 1;
+      }
+
+      .letters-vertical {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--green);
+      }
+
+      .letters-vertical span {
+        line-height: 1;
+      }
+
+      .arquipelago-content h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--green);
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .arquipelago-content p {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      /* =========================
+        CARDS DE MAPA (ILHAS E MACROLOCALIZAÇÃO)
+      ========================== */
+      .section-ilhas-card {
+        padding: 40px 20px;
+        background: var(--bg-light);
+      }
+
+      .ilhas-card-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .ilhas-card-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .ilhas-card-header h2 {
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--text-main);
+        margin-bottom: 6px;
+      }
+
+      .ilhas-card-header p {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .map-slider-container {
+        position: relative;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        background: #f5f5f5;
+      }
+
+      .map-slider-container .map-slide {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: none;
+      }
+
+      .map-slider-container .map-slide.active {
+        display: block;
+      }
+
+      /* Setas de navegação */
+      .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--green);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        transition: all 0.3s ease;
+      }
+
+      .slider-arrow:hover {
+        background: #fff;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .slider-arrow.left {
+        left: 12px;
+      }
+
+      .slider-arrow.right {
+        right: 12px;
+      }
+
+      /* =========================
+        MACROLOCALIZAÇÃO
+      ========================== */
+      .macro-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .macro-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .macro-header h2 {
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--text-main);
+      }
+
+      .macro-header p {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-top: 4px;
+      }
+
+      /* =========================
+        ACESSOS
+      ========================== */
+      .section-acessos {
+        background: var(--bg-light);
+      }
+
+      .acessos-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .acessos-icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-bottom: 16px;
+        overflow: hidden;
+      }
+
+      .acessos-icon-circle img {
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+      }
+
+      .acessos-content h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--green);
+        margin-bottom: 12px;
+        text-transform: uppercase;
+      }
+
+      .acessos-content p {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .acessos-images {
+        width: 100%;
+      }
+
+      .acessos-images img {
+        width: 100%;
+        max-width: 100%;
+        height: 240px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: var(--shadow-soft);
+        margin-bottom: 16px;
+      }
+
+      .acessos-images img:last-child {
+        margin-bottom: 0;
+      }
+
+      /* =========================
+        VILAREJO (só texto)
+      ========================== */
+      .vilarejo-text-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .vilarejo-icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .vilarejo-icon-circle img {
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+      }
+
+      .vilarejo-letters {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .vilarejo-text-content h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--green);
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .vilarejo-text-content p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-muted);
+      }
+
+      /* =========================
+        CADASTRO FINAL
+      ========================== */
+      .section-cadastro {
+        background: #fff;
+        padding: 60px 20px 10px;
+      }
+
+      .cadastro-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      .cadastro-form {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .cadastro-form h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--green);
+        margin-bottom: 12px;
+        text-transform: uppercase;
+      }
+
+      .cadastro-form .subtitle {
+        font-size: 18px;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .form-header {
+        background: var(--green);
+        color: #fff;
+        text-align: center;
+        padding: 18px 24px;
+        border-radius: 5px;
+        margin-bottom: 24px;
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .form-header h3 {
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .cadastro-form form {
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      .cadastro-form .form-group {
+        margin-bottom: 18px;
+      }
+
+      .cadastro-form .form-group input {
+        border: 1px solid #ddd;
+        padding: 16px 20px;
+        font-size: 16px;
+      }
+
+      .cadastro-form .btn-submit {
+        padding: 16px;
+        font-size: 17px;
+      }
+
+      .cadastro-image {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: -10px;
+      }
+
+      .cadastro-image img {
+        max-width: 280px;
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+      }
+
+      .cta-bar {
+        width: 100%;
+        margin: 0;
+        background: var(--green);
+        color: #fff;
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        line-height: 1.3;
+        margin-top: 0;
+      }
+
+      /* =========================
+        FOOTER
+      ========================== */
+      .footer {
+        background: #fff;
+        padding: 40px 20px 30px;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* ÍCONES SOCIAIS */
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .social-icon {
+        width: 55px;
+        height: 55px;
+        background: #c9a961;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(201, 169, 97, 0.3);
+      }
+
+      .social-icon svg {
+        width: 22px;
+        height: 22px;
+        fill: #fff;
+      }
+
+      .social-icon:hover {
+        background: #b8941f;
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 12px 30px rgba(201, 169, 97, 0.4);
+      }
+
+      .footer-location h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-main);
+        margin-bottom: 6px;
+      }
+
+      .footer-location p {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .footer-divider {
+        width: 100%;
+        height: 1px;
+        margin: 24px 0 20px;
+        background: #1aa89c;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        margin: 0 auto 16px;
+        display: block;
+      }
+
+      .footer-company h4 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-main);
+        margin-bottom: 4px;
+      }
+
+      .footer-company p {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+
+      .footer-legal {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #999;
+        font-style: italic;
+      }
+
+      .footer-legal p {
+        margin-bottom: 20px;
+      }
+
+      .btn-termos {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 35px;
+        border-radius: 50px;
+        background: var(--cyan-primary);
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        box-shadow: 0 8px 20px rgba(0, 172, 193, 0.3);
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-style: normal;
+      }
+
+      .btn-termos:hover {
+        background: var(--cyan-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(0, 172, 193, 0.4);
+      }
+
+      /* =========================
+        WHATSAPP FLOAT
+      ========================== */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 18px;
+        right: 18px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+        fill: #fff;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.08);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      }
+
+      /* =========================
+        BREAKPOINTS
+      ========================== */
+
+      @media (min-width: 768px) {
+        .top-bar h2 {
+          font-size: 16px;
+          letter-spacing: 2px;
+          padding-left: 60px;
+        }
+
+        .top-bar-logo {
+          height: 42px;
+        }
+
+        .hero {
+          padding-inline: 8%;
+        }
+
+        .hero-title {
+          font-size: clamp(28px, 4vw, 42px);
+          letter-spacing: 3px;
+        }
+
+        section {
+          padding: 50px 8%;
+        }
+
+        .section-cadastro {
+          padding: 60px 8% 10px;
+        }
+
+        .footer {
+          padding: 50px 8% 30px;
+        }
+
+        .footer-social {
+          gap: 15px;
+        }
+
+        .social-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        .social-icon svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .hero {
+          flex-direction: row;
+          align-items: center;
+          gap: 60px;
+          padding-top: 110px;
+          min-height: 100vh;
+        }
+
+        .hero-content {
+          max-width: 70%;
+          text-align: left;
+        }
+
+        .hero-title {
+          font-size: clamp(42px, 5.5vw, 64px);
+          line-height: 1.15;
+          letter-spacing: 3px;
+        }
+
+        .hero-title .title-mobile {
+          display: none;
+        }
+
+        .hero-title .title-desktop {
+          display: block;
+        }
+
+        .hero-form {
+          max-width: 420px;
+        }
+
+        .arquipelago-container {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .arquipelago-text-wrapper {
+          display: grid;
+          grid-template-columns: 1fr 500px;
+          gap: 32px;
+          align-items: flex-start;
+        }
+
+        .arquipelago-left-side {
+          display: flex;
+          gap: 20px;
+        }
+
+        .arquipelago-side-image {
+          width: 500px;
+          height: 280px;
+        }
+
+        .acessos-container {
+          display: grid;
+          grid-template-columns: 80px 1fr 600px;
+          align-items: flex-start;
+          gap: 40px;
+        }
+
+        .acessos-icon-circle {
+          width: 80px;
+          height: 80px;
+          margin-top: 0;
+        }
+
+        .acessos-content h2 {
+          font-size: 48px;
+          margin-bottom: 30px;
+        }
+
+        .acessos-content p {
+          font-size: 18px;
+          line-height: 1.8;
+          margin-bottom: 0;
+        }
+
+        .acessos-images {
+          position: relative;
+          width: 600px;
+          height: 400px;
+        }
+
+        .acessos-images img {
+          position: absolute;
+          margin-bottom: 0;
+          border-radius: 16px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .acessos-images img:nth-child(1) {
+          bottom: 0;
+          left: 0;
+          width: 370px;
+          height: 260px;
+          z-index: 1;
+        }
+
+        .acessos-images img:nth-child(2) {
+          top: 0;
+          right: 0;
+          width: 390px;
+          height: 240px;
+          z-index: 2;
+        }
+
+        .vilarejo-text-container {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          align-items: flex-start;
+          gap: 24px;
+        }
+
+        .vilarejo-icon-circle {
+          width: 70px;
+          height: 70px;
+        }
+
+        .vilarejo-letters {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .vilarejo-text-content h2 {
+          font-size: 32px;
+          margin-bottom: 16px;
+        }
+
+        .vilarejo-text-content p {
+          font-size: 17px;
+          line-height: 1.8;
+        }
+
+        .section-cadastro {
+          padding: 60px 0 60px;
+        }
+
+        .cadastro-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
+          gap: 120px;
+          text-align: center;
+          padding: 0 6%;
+          padding-bottom: 0;
+        }
+
+        .cadastro-form {
+          max-width: 550px;
+          width: 550px;
+          text-align: center;
+          padding: 0;
+          display: block;
+          flex-shrink: 0;
+        }
+
+        .cadastro-form h2 {
+          font-size: 62px;
+          margin-bottom: 12px;
+          line-height: 1.1;
+        }
+
+        .cadastro-form .subtitle {
+          font-size: 22px;
+          margin-bottom: 35px;
+        }
+
+        .form-header {
+          max-width: 100%;
+          padding: 20px 28px;
+          margin-bottom: 26px;
+        }
+
+        .form-header h3 {
+          font-size: 21px;
+        }
+
+        .cadastro-form form {
+          max-width: 100%;
+        }
+
+        .cadastro-form .form-group {
+          margin-bottom: 20px;
+        }
+
+        .cadastro-form .form-group input {
+          padding: 19px 24px;
+          font-size: 17px;
+        }
+
+        .cadastro-form .btn-submit {
+          padding: 19px;
+          font-size: 19px;
+          margin-top: 8px;
+        }
+
+        .cadastro-image img {
+          width: auto;
+          max-width: 450px;
+          height: auto;
+          min-height: 520px;
+          max-height: 540px;
+          object-fit: contain;
+          object-position: center top;
+        }
+
+        .cta-bar {
+          font-size: 18px;
+          padding: 24px 20px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .hero-title {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BARRA VERDE NO TOPO -->
+    <div class="top-bar">
+      <img src="logo/logo.png" alt="RE/MAX Seu Imóvel" class="top-bar-logo" />
+      <h2>GAMBOA DO MORRO - BA</h2>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-mobile"
+            >UM PARAÍSO DE BELEZAS NATURAIS<br />E UM DOS MELHORES<br />DO
+            BRASIL</span
+          >
+          <span class="title-desktop"
+            >UM PARAÍSO DE BELEZAS<br />NATURAIS E UM DOS<br />MELHORES DO
+            BRASIL</span
+          >
+        </h1>
+      </div>
+
+      <div class="hero-form">
+        <div class="form-header-green">
+          <h3>Quer conhecer?<br />Cadastre-se</h3>
+        </div>
+        <div class="hero-form-body">
+          <form id="heroForm">
+            <div class="form-group">
+              <input type="text" name="nome" placeholder="* Nome" required />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="* E-mail"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                name="telefone"
+                placeholder="* Telefone"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <a href="#arquipelago" class="hero-scroll">
+        <span>&#x25BC;</span>
+      </a>
+    </section>
+
+    <!-- SEÇÃO ARQUIPÉLAGO (texto) -->
+    <section class="section-arquipelago" id="arquipelago">
+      <div class="arquipelago-container">
+        <div class="arquipelago-text-wrapper">
+          <div class="arquipelago-left-side">
+            <div class="vertical-text">
+              <div class="icon">
+                <img src="icones/iconegamboa.png" alt="Ícone Ilha" />
+              </div>
+              <div class="letters">
+                <span>I</span>
+                <span>L</span>
+                <span>H</span>
+                <span>A</span>
+              </div>
+            </div>
+
+            <div class="arquipelago-content">
+              <h2>ARQUIPÉLAGO DE TINHARÉ</h2>
+              <p>
+                Tinharé, localizado no sul de Salvador, é composto por três
+                ilhas maiores habitadas e 23 ilhas pequenas, não habitadas. As
+                três maiores ilhas se chamam Cairu, Boipeba e Tinharé (essa
+                última, que leva o mesmo nome do arquipélago, é onde está
+                localizada a vila de Morro de São Paulo).
+              </p>
+            </div>
+          </div>
+
+          <img
+            src="praia/558763_1_37815_d.png"
+            alt="Vista aérea do Arquipélago de Tinharé"
+            class="arquipelago-side-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO ILHAS - CARD COM SLIDER -->
+    <section class="section-ilhas-card">
+      <div class="ilhas-card-container">
+        <div class="ilhas-card-header">
+          <h2>ARQUIPÉLAGO DE TINHARÉ</h2>
+          <p>GAMBOA | CAIRU - BA</p>
+        </div>
+
+        <div class="map-slider-container" id="ilhasSlider">
+          <img
+            class="map-slide active"
+            src="mapa/mapailha.png"
+            alt="Mapa do Arquipélago de Tinharé - 1"
+          />
+          <img
+            class="map-slide"
+            src="mapa/mapailha2.png"
+            alt="Mapa do Arquipélago de Tinharé - 2"
+          />
+
+          <div class="slider-arrow left" onclick="previousIlhas()">‹</div>
+          <div class="slider-arrow right" onclick="nextIlhas()">›</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO ACESSOS -->
+    <section class="section-acessos">
+      <div class="acessos-container">
+        <div class="acessos-icon-circle">
+          <img src="icones/iconeacesso.png" alt="Ícone Acessos" />
+        </div>
+
+        <div class="acessos-content">
+          <h2>ACESSOS</h2>
+          <p>
+            O transporte do Catamarã de Salvador para Morro de São Paulo chega
+            no Cais de Morro de São Paulo, na Primeira Praia, bem no centro da
+            Vila. Já para aqueles que buscam uma maneira rápida e eficiente de
+            como chegar à Gamboa a partir de Salvador, o voo direto é uma opção
+            que oferece conveniência e uma dose extra de elegância.
+          </p>
+        </div>
+
+        <div class="acessos-images">
+          <img src="acessos/catamarã.png" alt="Catamarã" />
+          <img src="acessos/avião.png" alt="Avião" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO MACROLOCALIZAÇÃO - CARD COM SLIDER -->
+    <section class="section-macro">
+      <div class="macro-container">
+        <div class="macro-header">
+          <h2>MACROLOCALIZAÇÃO</h2>
+          <p>GAMBOA | CAIRU-BA</p>
+        </div>
+
+        <div class="map-slider-container" id="macroSlider">
+          <img
+            class="map-slide active"
+            src="mapa/mapaacesso.png"
+            alt="Mapa de Macrolocalização - 1"
+          />
+          <img
+            class="map-slide"
+            src="mapa/mapaacesso2.png"
+            alt="Mapa de Macrolocalização - 2"
+          />
+
+          <div class="slider-arrow left" onclick="previousMacro()">‹</div>
+          <div class="slider-arrow right" onclick="nextMacro()">›</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO GAMBOA DO MORRO - TEXTO -->
+    <section class="section-vilarejo-text">
+      <div class="vilarejo-text-container">
+        <div class="vilarejo-letters">
+          <div class="vilarejo-icon-circle">
+            <img src="icones/iconearquipelogo.png" alt="Ícone Vilarejo" />
+          </div>
+
+          <div class="letters-vertical">
+            <span>V</span>
+            <span>I</span>
+            <span>L</span>
+            <span>A</span>
+            <span>R</span>
+            <span>E</span>
+            <span>J</span>
+            <span>O</span>
+          </div>
+        </div>
+
+        <div class="vilarejo-text-content">
+          <h2>GAMBOA DO MORRO-CAIRU</h2>
+          <p>
+            Gamboa é um pequeno vilarejo de pescadores pertencente ao município
+            de Cairu, localizado na Ilha de Tinharé, vizinha da vila de Morro de
+            São Paulo (Bahia) e abriga comunidades do Solar do Unhão e da Gamboa
+            de Cima e de Baixo – é margeado pela Avenida Contorno e abraçado
+            pela Baía de Todos os Santos. Sim, os moradores desse paraíso têm
+            como vista permanente a calmaria do mar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CADASTRO FINAL -->
+    <section class="section-cadastro">
+      <div class="cadastro-container">
+        <div class="cadastro-form">
+          <h2>CADASTRE-SE</h2>
+          <p class="subtitle">PARA MELHORES INFORMAÇÕES</p>
+
+          <div class="form-header">
+            <h3>Quer conhecer?<br />Cadastre-se</h3>
+          </div>
+
+          <form id="contatoForm">
+            <div class="form-group">
+              <input type="text" name="nome" placeholder="*Nome" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="*E-mail" required />
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                name="telefone"
+                placeholder="*Telefone"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-submit">Enviar</button>
+          </form>
+        </div>
+
+        <div class="cadastro-image">
+          <img src="luis/luis.png" alt="Corretor" />
+        </div>
+      </div>
+    </section>
+
+    <!-- BARRA CTA -->
+    <div class="cta-bar">
+      EU NUNCA VOU ESTAR OCUPADO PARA RECEBER UMA INDICAÇÃO SUA.
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Social Icons -->
+        <div class="footer-social">
+          <a href="#" class="social-icon" target="_blank" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="social-icon" target="_blank" aria-label="Twitter">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="social-icon"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="social-icon" target="_blank" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-location">
+          <h3>Gamboa do Morro</h3>
+          <p>Rua Principal do Toque, Quadra 48 - Lote 38</p>
+          <p>Gamboa, Cairu - BA, 45420-000</p>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-logo">
+          <img
+            src="logo/logovermelha.png"
+            alt="Imobiliária RE/MAX Seu Imóvel"
+          />
+        </div>
+
+        <div class="footer-company">
+          <h4>RE/MAX Seu Imóvel</h4>
+          <p>Avenida Washington Soares, 8660 B</p>
+          <p>Messejana, Fortaleza - CE, 60841-032</p>
+        </div>
+
+        <div class="footer-legal">
+          <p>Copyright © Remax Seu Imóvel – Todos os direitos reservados.</p>
+          <a
+            href="https://web.seuimovel.com.br/termos-e-politicas"
+            class="btn-termos"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar termos e políticas
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a
+      href="https://wa.me/5585981188888"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contato via WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.188-2.113c2.35 1.312 5.019 2.113 7.812 2.113 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.5c-2.547 0-5.043-0.725-7.2-2.1l-0.518-0.3-5.362 1.387 1.4-5.213-0.337-0.55c-1.512-2.238-2.313-4.838-2.313-7.537 0-7.45 6.05-13.5 13.5-13.5s13.5 6.05 13.5 13.5-6.05 13.5-13.5 13.5zM22.988 19.35c-0.387-0.2-2.3-1.137-2.662-1.262-0.363-0.138-0.625-0.2-0.887 0.2s-1.025 1.262-1.25 1.525c-0.237 0.262-0.462 0.3-0.85 0.1s-1.65-0.612-3.137-1.938c-1.163-1.037-1.95-2.325-2.175-2.713-0.225-0.387-0.025-0.6 0.175-0.787 0.175-0.175 0.387-0.463 0.575-0.688 0.2-0.225 0.263-0.387 0.4-0.637 0.137-0.263 0.063-0.488-0.038-0.688s-0.887-2.137-1.213-2.925c-0.325-0.775-0.65-0.663-0.887-0.675-0.225-0.012-0.487-0.012-0.75-0.012s-0.7 0.1-1.063 0.488c-0.363 0.387-1.387 1.35-1.387 3.3s1.413 3.825 1.613 4.088c0.2 0.262 2.8 4.275 6.788 5.988 0.95 0.412 1.688 0.65 2.263 0.837 0.95 0.3 1.813 0.262 2.5 0.162 0.762-0.112 2.3-0.937 2.625-1.85 0.325-0.912 0.325-1.688 0.225-1.85-0.087-0.175-0.35-0.275-0.737-0.475z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      // SLIDER DO CARD DAS ILHAS
+      const ilhasSlides = document.querySelectorAll("#ilhasSlider .map-slide");
+      let ilhasIndex = 0;
+
+      function showIlhasSlide() {
+        ilhasSlides.forEach((img, i) => {
+          img.classList.toggle("active", i === ilhasIndex);
+        });
+      }
+
+      function nextIlhas() {
+        ilhasIndex = (ilhasIndex + 1) % ilhasSlides.length;
+        showIlhasSlide();
+      }
+
+      function previousIlhas() {
+        ilhasIndex = (ilhasIndex - 1 + ilhasSlides.length) % ilhasSlides.length;
+        showIlhasSlide();
+      }
+
+      // SLIDER DO CARD DE MACROLOCALIZAÇÃO
+      const macroSlides = document.querySelectorAll("#macroSlider .map-slide");
+      let macroIndex = 0;
+
+      function showMacroSlide() {
+        macroSlides.forEach((img, i) => {
+          img.classList.toggle("active", i === macroIndex);
+        });
+      }
+
+      function nextMacro() {
+        macroIndex = (macroIndex + 1) % macroSlides.length;
+        showMacroSlide();
+      }
+
+      function previousMacro() {
+        macroIndex = (macroIndex - 1 + macroSlides.length) % macroSlides.length;
+        showMacroSlide();
+      }
+    </script>
+
+    <!-- ENVIO PARA N8N + ORIGEM DO SITE -->
+    <script>
+      const WEBHOOK_GAMBOA =
+        "https://automacao.system.seuimovel.com.br/webhook/lead-site";
+
+      function bindFormToWebhook(formId, origem) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+
+        if (form.dataset.bound === "1") return;
+        form.dataset.bound = "1";
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const btn = form.querySelector(
+            'button[type="submit"], input[type="submit"]'
+          );
+
+          if (btn && !btn.dataset.originalText) {
+            btn.dataset.originalText = btn.value || btn.textContent || "Enviar";
+          }
+
+          const nome =
+            form.querySelector('input[name="nome"]')?.value?.trim() || "";
+          const email =
+            form.querySelector('input[name="email"]')?.value?.trim() || "";
+          const telefone =
+            form.querySelector('input[name="telefone"]')?.value?.trim() || "";
+
+          try {
+            if (btn) {
+              btn.disabled = true;
+              if (btn.tagName.toLowerCase() === "input")
+                btn.value = "ENVIANDO...";
+              else btn.textContent = "ENVIANDO...";
+            }
+
+            const body = new URLSearchParams();
+            body.append("nome", nome);
+            body.append("email", email);
+            body.append("telefone", telefone);
+            body.append("origem", origem);
+
+            const resp = await fetch(WEBHOOK_GAMBOA, {
+              method: "POST",
+              headers: {
+                "Content-Type":
+                  "application/x-www-form-urlencoded;charset=UTF-8",
+              },
+              body,
+            });
+
+            if (!resp.ok) {
+              const text = await resp.text().catch(() => "");
+              throw new Error(`Webhook erro ${resp.status}: ${text}`);
+            }
+
+            alert("✅ Cadastro enviado! Entraremos em contato em breve.");
+            form.reset();
+          } catch (err) {
+            console.error("❌ Erro ao enviar:", err);
+            alert(
+              "❌ Não consegui enviar agora. Abra o Console (F12) e me mande o erro."
+            );
+          } finally {
+            if (btn) {
+              btn.disabled = false;
+              const t = btn.dataset.originalText || "Enviar";
+              if (btn.tagName.toLowerCase() === "input") btn.value = t;
+              else btn.textContent = t;
+            }
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        bindFormToWebhook("heroForm", "Gamboa do Morro - Hero");
+        bindFormToWebhook("contatoForm", "Gamboa do Morro - Cadastro Final");
+      });
+    </script>
+  </body>
+</html>
